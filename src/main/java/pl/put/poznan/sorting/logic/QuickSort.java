@@ -3,7 +3,7 @@ package pl.put.poznan.sorting.logic;
 public class QuickSort
 {
 
-    int partition(int arr[], int low, int high)
+    int partition(int[] arr, int low, int high)
     {
         int pivot = arr[high];
         int i = (low-1); // index of smaller element
@@ -28,7 +28,7 @@ public class QuickSort
     }
 
 
-    void sort(int arr[], int low, int high)
+    void sort(int[] arr, int low, int high)
     {
         if (low < high)
         {
@@ -40,9 +40,9 @@ public class QuickSort
         }
     }
     public int[] sortData(int[] data_in)
-    {   int[] wynik = data_in;
-        int n = wynik.length;
-        sort(wynik, 0 , n-1);
-        return wynik;
+    {
+        int n = data_in.length;
+        sort(data_in, 0 , n-1);
+        return data_in;
     }
 }

@@ -3,7 +3,7 @@ package pl.put.poznan.sorting.logic;
 // Java program for implementation of Heap Sort
 public class HeapSort implements SortingTemplate
 {
-    public void sort(int arr[])
+    public void sort(int[] arr)
     {
         int n = arr.length;
 
@@ -26,7 +26,7 @@ public class HeapSort implements SortingTemplate
 
     // To heapify a subtree rooted with node i which is
     // an index in arr[]. n is size of heap
-    void heapify(int arr[], int n, int i)
+    void heapify(int[] arr, int n, int i)
     {
         int largest = i; // Initialize largest as root
         int l = 2*i + 1; // left = 2*i + 1
@@ -47,7 +47,7 @@ public class HeapSort implements SortingTemplate
             arr[i] = arr[largest];
             arr[largest] = swap;
 
-            // Recursively heapify the affected sub-tree
+            // Recursively heapify the affected subtree
             heapify(arr, n, largest);
         }
     }
@@ -56,8 +56,8 @@ public class HeapSort implements SortingTemplate
 
     // Driver program
     public int[] sortData(int[] data_in)
-    {   int[] wynik = data_in;
-        sort(wynik);
-        return wynik;
+    {
+        sort(data_in);
+        return data_in;
     }
 }

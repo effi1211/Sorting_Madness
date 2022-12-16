@@ -1,10 +1,9 @@
 package pl.put.poznan.sorting.logic;
 
 // Java program for implementation of Selection Sort
-import java.io.*;
 public class SelectionSort
 {
-    void sort(int arr[])
+    void sort(int[] arr)
     {
         int n = arr.length;
 
@@ -26,8 +25,8 @@ public class SelectionSort
     }
 
     public int[] sortData(int[] data_in)
-    {   int[] wynik = data_in;
-        sort(wynik);
-        return wynik;
+    {
+        sort(data_in);
+        return data_in;
     }
 }

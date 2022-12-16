@@ -1,7 +1,7 @@
 package pl.put.poznan.sorting.logic;
 
 class BubbleSort {
-    void bubbleSort(int arr[])
+    void bubbleSort(int[] arr)
     {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++)
@@ -14,18 +14,9 @@ class BubbleSort {
                 }
     }
 
-    /* Prints the array */
-    void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
     public int[] sortData(int[] data_in)
-    {   int[] wynik = data_in;
-        bubbleSort(wynik);
-        return wynik;
+    {
+        bubbleSort(data_in);
+        return data_in;
     }
 }

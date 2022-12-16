@@ -1,9 +1,9 @@
 package pl.put.poznan.sorting.logic;
 
 public class MergeSort {
-    public class InsertionSort {
+    public static class InsertionSort {
         /*Function to sort array using insertion sort*/
-        void sort(int arr[])
+        void sort(int[] arr)
         {
             int n = arr.length;
             for (int i = 1; i < n; ++i) {
@@ -22,9 +22,9 @@ of their current position */
         }
 
         public int[] sortData(int[] data_in)
-        {   int[] wynik = data_in;
-            sort(wynik);
-            return wynik;
+        {
+            sort(data_in);
+            return data_in;
         }
-    };
+    }
 }

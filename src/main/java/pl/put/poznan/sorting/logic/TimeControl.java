@@ -4,19 +4,17 @@ public class TimeControl {
 
     private static long start;
     private static long finish;
-    private static long sorttime;
 
 
     public void startTime(){
-        start = System.currentTimeMillis();
+        start = System.nanoTime();
     }
 
     public void stopTime(){
-        finish = System.currentTimeMillis();
+        finish = System.nanoTime();
     }
 
     public long getTime(){
-        sorttime = finish-start;
-        return sorttime;
+        return finish-start;
     }
 }

@@ -25,4 +25,4 @@ of their current position */
         sort(wynik);
         return wynik;
     }
-};;
+}
