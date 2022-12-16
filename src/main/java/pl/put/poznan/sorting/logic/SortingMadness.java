@@ -34,12 +34,12 @@ public class SortingMadness {
 
         int[] arr = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
         timer.startTime();
-        int[] a = bubbles.sortData(arr);
+        int[] a = merge.sortData(arr);
         timer.stopTime();
 
         System.out.println("Sorted array");
         System.out.println(timer.getTime());
-        printArray(reverse(a));
+        printArray(a);
     }
 
     static int[] reverse(int[] a)
