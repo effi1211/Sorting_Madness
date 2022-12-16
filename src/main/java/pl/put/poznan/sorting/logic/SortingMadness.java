@@ -1,5 +1,7 @@
 package pl.put.poznan.sorting.logic;
 
+import java.lang.invoke.SwitchPoint;
+
 /**
  * This is just an example to show that the logic should be outside the REST service.
  */
@@ -23,10 +25,16 @@ public class SortingMadness {
     }
     public static void main(String[] args)
     {   TimeControl timer = new TimeControl();
-        BubbleSort ob = new BubbleSort();
+        BubbleSort bubbles = new BubbleSort();
+        HeapSort heap = new HeapSort();
+        InsertionSort insert = new InsertionSort();
+        MergeSort merge = new MergeSort();
+        QuickSort quick = new QuickSort();
+        SelectionSort select = new SelectionSort();
+
         int[] arr = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
         timer.startTime();
-        int[] a = ob.sortData(arr);
+        int[] a = bubbles.sortData(arr);
         timer.stopTime();
 
         System.out.println("Sorted array");

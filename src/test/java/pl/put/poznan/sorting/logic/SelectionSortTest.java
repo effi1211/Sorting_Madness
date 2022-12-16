@@ -1,16 +1,12 @@
 package pl.put.poznan.sorting.logic;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
-
-class BubbleSortTest {
-    private final BubbleSort sort = new BubbleSort();
+class SelectionSortTest {
+    private final SelectionSort sort = new SelectionSort();
     int[] liczby = new int[] {};
     int[] spodziewanywynik_liczby = new int[] {};
 
@@ -22,9 +18,10 @@ class BubbleSortTest {
     }
 
     @Test
-    void TestBubbleSort(){
+    void TestInsertionSort(){
         int[] wynik = sort.sortData(liczby);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
+
 
 }
