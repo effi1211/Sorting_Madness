@@ -30,14 +30,9 @@ of their current position */
         System.out.println();
     }
 
-    // Driver method
-    public static void main(String args[])
-    {
-        int arr[] = { 12, 11, 13, 5, 6 };
-
-        InsertionSort ob = new InsertionSort();
-        ob.sort(arr);
-
-        printArray(arr);
+    public int[] sortData(int[] data_in)
+    {   int[] wynik = data_in;
+        sort(wynik);
+        return wynik;
     }
 };;

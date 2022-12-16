@@ -16,4 +16,12 @@ public class SortingMadness {
         return text.toUpperCase();
     }
 
+    public static void main(String args[])
+    {
+        HeapSort ob = new HeapSort();
+        int arr[] = {64,25,12,22,11};
+        int[] a = ob.sortData(arr);
+        System.out.println("Sorted array");
+        ob.printArray(a);
+    }
 }

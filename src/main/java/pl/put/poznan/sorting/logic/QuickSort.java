@@ -48,15 +48,10 @@ public class QuickSort
         System.out.println();
     }
 
-    public static void main(String args[])
-    {
-        int arr[] = {10, 7, 8, 9, 1, 5};
-        int n = arr.length;
-
-        QuickSort ob = new QuickSort();
-        ob.sort(arr, 0, n-1);
-
-        System.out.println("sorted array");
-        printArray(arr);
+    public int[] sortData(int[] data_in)
+    {   int[] wynik = data_in;
+        int n = wynik.length;
+        sort(wynik, 0 , n-1);
+        return wynik;
     }
 }
