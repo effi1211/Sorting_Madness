@@ -16,12 +16,35 @@ public class SortingMadness {
         return text.toUpperCase();
     }
 
-    public static void main(String args[])
+    static void printArray(int arr[])
     {
-        HeapSort ob = new HeapSort();
-        int arr[] = {64,25,12,22,11};
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+    public static void main(String args[])
+    {   TimeControl timer = new TimeControl();
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
+        timer.startTime();
         int[] a = ob.sortData(arr);
+        timer.stopTime();
+
         System.out.println("Sorted array");
-        ob.printArray(a);
+        System.out.println(timer.getTime());
+        printArray(reverse(a));
+    }
+
+    static int[] reverse(int a[])
+    {   int n = a.length;
+        int[] b = new int[n];
+        int j = n;
+        for (int i = 0; i < n; i++) {
+            b[j - 1] = a[i];
+            j = j - 1;
+        }
+
+        return b;
     }
 }
