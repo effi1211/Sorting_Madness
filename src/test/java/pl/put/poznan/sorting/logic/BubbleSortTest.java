@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 
 class BubbleSortTest {
-    private BubbleSort bubbles = new BubbleSort();
+    private final BubbleSort bubbles = new BubbleSort();
     int[] liczby = new int[] {};
     int[] spodziewanywynik_liczby = new int[] {};
 
@@ -24,6 +24,6 @@ class BubbleSortTest {
     @Test
     void TestBubbleSort(){
         int[] wynik = bubbles.sortData(liczby);
-        Assertions.assertTrue(Arrays.equals(spodziewanywynik_liczby,wynik));
+        assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
 }
