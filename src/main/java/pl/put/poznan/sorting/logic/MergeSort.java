@@ -21,16 +21,6 @@ of their current position */
             }
         }
 
-        /* A utility function to print array of size n*/
-        void printArray(int arr[])
-        {
-            int n = arr.length;
-            for (int i = 0; i < n; ++i)
-                System.out.print(arr[i] + " ");
-
-            System.out.println();
-        }
-
         public int[] sortData(int[] data_in)
         {   int[] wynik = data_in;
             sort(wynik);

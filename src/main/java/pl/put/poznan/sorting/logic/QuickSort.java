@@ -39,15 +39,6 @@ public class QuickSort
             sort(arr, pi+1, high);
         }
     }
-
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
-
     public int[] sortData(int[] data_in)
     {   int[] wynik = data_in;
         int n = wynik.length;
