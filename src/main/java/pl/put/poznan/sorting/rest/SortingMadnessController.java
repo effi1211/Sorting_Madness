@@ -1,8 +1,8 @@
-package pl.put.poznan.transformer.rest;
+package pl.put.poznan.sorting.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.transformer.logic.SortingMadness;
+import pl.put.poznan.sorting.logic.SortingMadness;
 
 import java.util.Arrays;
 

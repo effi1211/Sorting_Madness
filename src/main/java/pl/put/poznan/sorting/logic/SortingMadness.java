@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.sorting.logic;
 
 /**
  * This is just an example to show that the logic should be outside the REST service.
@@ -15,4 +15,5 @@ public class SortingMadness {
         // of course, normally it would do something based on the transforms
         return text.toUpperCase();
     }
+
 }
