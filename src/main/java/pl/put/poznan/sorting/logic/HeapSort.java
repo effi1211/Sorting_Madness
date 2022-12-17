@@ -6,10 +6,10 @@ package pl.put.poznan.sorting.logic;
 public class HeapSort implements SortingTemplate
 {
     /**
-     * Numbers array sorting.
+     * This function sorts arrays of numbers
      *
-     * @param arr tablica z liczbami do posortowania
-     * @param iter liczba iteracji
+     * @param arr array of numbers
+     * @param iter number of iteration
      */
     public void sort(int[] arr, int iter)
     {
@@ -30,15 +30,12 @@ public class HeapSort implements SortingTemplate
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-
             // call max heapify on the reduced heap
             heapify(arr, i, 0);
         }
     }
-
-
     /**
-     * To heapify a subtree rooted with node i which is an index in arr[]. n is size of heap
+     * To Heapify a subtree rooted with node i which is an index in arr[].
      * @param arr array of numbers
      * @param i node
      * @param n size of heap
@@ -70,10 +67,10 @@ public class HeapSort implements SortingTemplate
     }
 
     /**
-     * Numbers array sorting.
+     * This function sorts arrays of numbers.
      *
-     * @param data_in tablica z liczbami do posortowania
-     * @return sorted numbers array.
+     * @param data_in array of numbers.
+     * @return sorted array of numbers.
      */
 
     @Override

@@ -39,7 +39,7 @@ public class SortingMadness {
         SelectionSort select = new SelectionSort();
 
         timer.startTime();
-        int[] a = merge.sortData(arr, 0);
+        int[] a = heap.sortData(arr, 0);
         timer.stopTime();
 
         System.out.println("Sorted array");
