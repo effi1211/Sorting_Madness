@@ -1,6 +1,10 @@
 package pl.put.poznan.sorting.logic;
 
 public class MergeSort {
+
+    private int iter=0;
+    private int itermax=0;
+
     void merge(int[] arr, int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
@@ -53,8 +57,9 @@ public class MergeSort {
     // Main function that sorts arr[l..r] using
     // merge()
     void sort(int[] arr, int l, int r)
-    {
-        if (l < r) {
+    {   iter = iter +1;
+        if (l < r&& (iter < itermax || itermax <=0))
+        {
             // Find the middle point
             int m = l + (r - l) / 2;
 
@@ -67,8 +72,10 @@ public class MergeSort {
         }
     }
 
-        public int[] sortData(int[] data_in)
+        public int[] sortData(int[] data_in, int i)
         {
+            iter = 0;
+            itermax = i;
             sort(data_in,0,data_in.length-1);
             return data_in;
         }
