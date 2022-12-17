@@ -2,6 +2,8 @@ package pl.put.poznan.sorting.logic;
 
 public class QuickSort
 {
+    private int iter=0;
+    private int itermax=0;
 
     int partition(int[] arr, int low, int high)
     {
@@ -29,8 +31,8 @@ public class QuickSort
 
 
     void sort(int[] arr, int low, int high)
-    {
-        if (low < high)
+    {   iter = iter +1;
+        if (low < high && (iter < itermax || itermax <=0))
         {
 
             int pi = partition(arr, low, high);
@@ -39,9 +41,11 @@ public class QuickSort
             sort(arr, pi+1, high);
         }
     }
-    public int[] sortData(int[] data_in)
+    public int[] sortData(int[] data_in, int i)
     {
         int n = data_in.length;
+        iter = 0;
+        itermax = i;
         sort(data_in, 0 , n-1);
         return data_in;
     }
