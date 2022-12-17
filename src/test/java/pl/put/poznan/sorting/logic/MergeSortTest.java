@@ -1,7 +1,10 @@
 package pl.put.poznan.sorting.logic;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,9 +22,13 @@ class MergeSortTest {
     }
 
     @Test
-    void TestInsertionSort(){
-        int[] wynik = sort.sortData(liczby);
+    void TestMergeSort(){
+        int[] wynik = sort.sortData(liczby,0);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
-
+    @Test
+    void TestMergeSort2(){
+        int[] wynik = sort.sortData(liczby,1);
+        assertFalse(Arrays.equals(spodziewanywynik_liczby, wynik));
+    }
 }
