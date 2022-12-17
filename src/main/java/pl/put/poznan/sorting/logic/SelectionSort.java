@@ -1,8 +1,16 @@
 package pl.put.poznan.sorting.logic;
 
-// Java program for implementation of Selection Sort
-public class SelectionSort
+/**
+ * SelectionSort
+ */
+public class SelectionSort implements SortingTemplate
 {
+    /**
+     * This function sorts arrays of numbers :)
+     *
+     * @param arr array of numbers
+     * @param iter number of iteration
+     */
     void sort(int[] arr, int iter)
     {
         int n = iter;
@@ -27,7 +35,12 @@ public class SelectionSort
             arr[i] = temp;
         }
     }
-
+    /**
+     * This function sorts arrays of numbers.
+     *
+     * @param data_in array of numbers.
+     * @return sorted array of numbers.
+     */
     public int[] sortData(int[] data_in,int iter)
     {
         sort(data_in, iter);

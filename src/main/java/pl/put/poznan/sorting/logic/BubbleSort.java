@@ -1,6 +1,6 @@
 package pl.put.poznan.sorting.logic;
 
-class BubbleSort {
+class BubbleSort implements SortingTemplate{
 
 
     void bubbleSort(int[] arr, int iter)
