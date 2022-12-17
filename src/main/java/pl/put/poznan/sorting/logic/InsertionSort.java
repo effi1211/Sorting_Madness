@@ -1,6 +1,6 @@
 package pl.put.poznan.sorting.logic;
 
-public class InsertionSort {
+public class InsertionSort implements SortingTemplate{
     /*Function to sort array using insertion sort*/
     void sort(int[] arr, int iter)
     {   int n = iter;

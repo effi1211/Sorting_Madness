@@ -2,7 +2,7 @@ package pl.put.poznan.sorting.logic;
 /**
  * MergeSort
  */
-public class MergeSort {
+public class MergeSort implements SortingTemplate{
 
     private int iter=0;
     private int itermax=0;

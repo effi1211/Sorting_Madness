@@ -1,6 +1,6 @@
 package pl.put.poznan.sorting.logic;
 
-public class QuickSort
+public class QuickSort implements SortingTemplate
 {
     private int iter=0;
     private int itermax=0;
