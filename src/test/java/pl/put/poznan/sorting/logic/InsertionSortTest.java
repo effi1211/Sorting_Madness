@@ -19,7 +19,7 @@ class InsertionSortTest {
 
     @Test
     void TestInsertionSort(){
-        int[] wynik = sort.sortData(liczby);
+        int[] wynik = sort.sortData(liczby,0);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
 

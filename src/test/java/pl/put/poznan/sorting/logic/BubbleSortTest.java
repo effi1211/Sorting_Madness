@@ -23,7 +23,7 @@ class BubbleSortTest {
 
     @Test
     void TestBubbleSort(){
-        int[] wynik = sort.sortData(liczby);
+        int[] wynik = sort.sortData(liczby,0);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
 

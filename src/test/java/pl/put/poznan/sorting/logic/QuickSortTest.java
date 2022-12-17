@@ -18,8 +18,8 @@ class QuickSortTest {
     }
 
     @Test
-    void TestInsertionSort(){
-        int[] wynik = sort.sortData(liczby);
+    void TestQuickSort(){
+        int[] wynik = sort.sortData(liczby,0);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
 

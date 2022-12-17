@@ -18,8 +18,8 @@ class SelectionSortTest {
     }
 
     @Test
-    void TestInsertionSort(){
-        int[] wynik = sort.sortData(liczby);
+    void TestSelectionSort(){
+        int[] wynik = sort.sortData(liczby,0);
         assertArrayEquals(spodziewanywynik_liczby, wynik);
     }
 
