@@ -1,8 +1,16 @@
 package pl.put.poznan.sorting.logic;
-
+/**
+ * Heap sort
+ */
 // Java program for implementation of Heap Sort
 public class HeapSort implements SortingTemplate
 {
+    /**
+     * Numbers array sorting.
+     *
+     * @param arr tablica z liczbami do posortowania
+     * @param iter liczba iteracji
+     */
     public void sort(int[] arr, int iter)
     {
         int n = iter;
@@ -28,8 +36,13 @@ public class HeapSort implements SortingTemplate
         }
     }
 
-    // To heapify a subtree rooted with node i which is
-    // an index in arr[]. n is size of heap
+
+    /**
+     * To heapify a subtree rooted with node i which is an index in arr[]. n is size of heap
+     * @param arr array of numbers
+     * @param i node
+     * @param n size of heap
+     */
     void heapify(int[] arr, int n, int i)
     {
         int largest = i; // Initialize largest as root
@@ -56,7 +69,12 @@ public class HeapSort implements SortingTemplate
         }
     }
 
-
+    /**
+     * Numbers array sorting.
+     *
+     * @param data_in tablica z liczbami do posortowania
+     * @return sorted numbers array.
+     */
 
     @Override
     public int[] sortData(int[] data_in, int iter)
