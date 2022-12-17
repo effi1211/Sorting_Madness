@@ -3,9 +3,13 @@ package pl.put.poznan.sorting.logic;
 // Java program for implementation of Heap Sort
 public class HeapSort implements SortingTemplate
 {
-    public void sort(int[] arr)
+    public void sort(int[] arr, int iter)
     {
-        int n = arr.length;
+        int n = iter;
+        if (iter == -1 || iter > arr.length)
+        {
+            n = arr.length;
+        }
 
         // Build heap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--)
@@ -54,10 +58,11 @@ public class HeapSort implements SortingTemplate
 
 
 
-    // Driver program
-    public int[] sortData(int[] data_in)
+    @Override
+    public int[] sortData(int[] data_in, int iter)
     {
-        sort(data_in);
+        sort(data_in, iter);
         return data_in;
     }
+
 }

@@ -2,9 +2,12 @@ package pl.put.poznan.sorting.logic;
 
 public class InsertionSort {
     /*Function to sort array using insertion sort*/
-    void sort(int arr[])
-    {
-        int n = arr.length;
+    void sort(int arr[], int iter)
+    {   int n = iter;
+        if (iter == -1 || iter > arr.length)
+        {
+            n = arr.length;
+        }
         for (int i = 1; i < n; ++i) {
             int key = arr[i];
             int j = i - 1;
@@ -20,9 +23,9 @@ of their current position */
         }
     }
 
-    public int[] sortData(int[] data_in)
+    public int[] sortData(int[] data_in, int iter)
     {   int[] wynik = data_in;
-        sort(wynik);
+        sort(wynik, iter);
         return wynik;
     }
 }

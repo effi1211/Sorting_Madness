@@ -3,9 +3,13 @@ package pl.put.poznan.sorting.logic;
 // Java program for implementation of Selection Sort
 public class SelectionSort
 {
-    void sort(int[] arr)
+    void sort(int[] arr, int iter)
     {
-        int n = arr.length;
+        int n = iter;
+        if (iter == -1 || iter > arr.length)
+        {
+            n = arr.length;
+        }
 
 // One by one move boundary of unsorted subarray
         for (int i = 0; i < n-1; i++)
@@ -24,9 +28,9 @@ public class SelectionSort
         }
     }
 
-    public int[] sortData(int[] data_in)
+    public int[] sortData(int[] data_in,int iter)
     {
-        sort(data_in);
+        sort(data_in, iter);
         return data_in;
     }
 }
