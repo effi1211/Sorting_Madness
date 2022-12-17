@@ -4,7 +4,7 @@ public class InsertionSort {
     /*Function to sort array using insertion sort*/
     void sort(int arr[], int iter)
     {   int n = iter;
-        if (iter == -1 || iter > arr.length)
+        if (iter <= 0 || iter > arr.length)
         {
             n = arr.length;
         }

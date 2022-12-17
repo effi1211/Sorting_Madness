@@ -6,7 +6,7 @@ public class SelectionSort
     void sort(int[] arr, int iter)
     {
         int n = iter;
-        if (iter == -1 || iter > arr.length)
+        if (iter <= 0 || iter > arr.length)
         {
             n = arr.length;
         }
