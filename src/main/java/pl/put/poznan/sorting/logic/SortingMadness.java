@@ -25,6 +25,12 @@ public class SortingMadness {
     }
     public static void main(String[] args)
     {   TimeControl timer = new TimeControl();
+        int[] arr = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
+        if(arr.length == 0){
+            System.out.println("Empty Array");
+            return;
+        }
+
         BubbleSort bubbles = new BubbleSort();
         HeapSort heap = new HeapSort();
         InsertionSort insert = new InsertionSort();
@@ -32,7 +38,6 @@ public class SortingMadness {
         QuickSort quick = new QuickSort();
         SelectionSort select = new SelectionSort();
 
-        int[] arr = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
         timer.startTime();
         int[] a = merge.sortData(arr, 0);
         timer.stopTime();
