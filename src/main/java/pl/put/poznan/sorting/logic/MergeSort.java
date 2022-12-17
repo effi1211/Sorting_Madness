@@ -1,10 +1,19 @@
 package pl.put.poznan.sorting.logic;
-
+/**
+ * MergeSort
+ */
 public class MergeSort {
 
     private int iter=0;
     private int itermax=0;
-
+    /**
+     * This merges the arrays :)
+     *
+     * @param arr array of numbers
+     * @param l beginning of first subarray [l...m]
+     * @param m end of first subarray [l...m] and beginning of second array [m+1...r]
+     * @param r end of second subarray [m+1...r]
+     */
     void merge(int[] arr, int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
@@ -54,8 +63,13 @@ public class MergeSort {
         }
     }
 
-    // Main function that sorts arr[l..r] using
-    // merge()
+    /**
+     * Main function that sorts arr[l..r] using merge()
+     *
+     * @param arr array of numbers
+     * @param l beginning of array [l...r]
+     * @param r end of array [l...r]
+     */
     void sort(int[] arr, int l, int r)
     {   iter = iter +1;
         if (l < r&& (iter < itermax || itermax <=0))
@@ -71,7 +85,13 @@ public class MergeSort {
             merge(arr, l, m, r);
         }
     }
-
+    /**
+     * This function sorts arrays of numbers :)
+     *
+     * @param data_in array of numbers
+     * @param i number of iteration
+     * @return sorted array
+     */
         public int[] sortData(int[] data_in, int i)
         {
             iter = 0;
