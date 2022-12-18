@@ -6,17 +6,24 @@ import java.lang.invoke.SwitchPoint;
  * This is just an example to show that the logic should be outside the REST service.
  */
 public class SortingMadness {
-
-    public int[] sort(int[] text, int iterations, boolean desc){
+    public static class result {
+        long time;
+        String algorithmName;
+        int[] sorted;
+    }
+    public result sort(int[] text, int iterations, boolean desc){
         SelectionSort select = new SelectionSort();
-        if (desc)
-        {
-            return reverse(select.sortData(text, iterations));
+        result result = new result();
 
-        } else
-        {
-            return select.sortData(text, iterations);
-        }
+        TimeControl timer = new TimeControl();
+        result.algorithmName = "selection";
+        timer.startTime();
+        result.sorted = select.sortData(text, iterations);
+        timer.stopTime();
+        result.time = timer.getTime();
+        result.sorted = reverse(result.sorted);
+
+        return result;
 
     }
 
