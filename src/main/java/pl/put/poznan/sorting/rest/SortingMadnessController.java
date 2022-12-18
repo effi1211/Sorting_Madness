@@ -21,7 +21,6 @@ public class SortingMadnessController {
         public String[] algorithms;
     }
 
-
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity  post(@RequestBody sortInfo data_in) {
         SortingMadness sorter = new SortingMadness();
@@ -46,7 +45,6 @@ public class SortingMadnessController {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error - wrong algorithm name");
             }
         }
-
 
         return ResponseEntity.status(HttpStatus.OK).body(sortedData);
     }

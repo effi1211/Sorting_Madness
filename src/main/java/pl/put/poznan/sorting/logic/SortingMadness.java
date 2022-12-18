@@ -52,12 +52,12 @@ public class SortingMadness {
 
     }
 
-    static void printArray(int[] arr)
+    static void printArray(int[] arr) //TODO do usunięcia na końcu
     {
         for (int j : arr) System.out.print(j + " ");
         System.out.println();
     }
-    public static void main(String[] args)
+    public static void main(String[] args) //TODO do usunięcia na końcu
     {   TimeControl timer = new TimeControl();
         int[] arr = {64,25,12,22,11,45,76,767,56,434,43,54,65,76,78,887,566556,45,45,545454,4554,5454,54,4545,54,54,54,54,45,34,4,3,5465};
         if(arr.length == 0){
