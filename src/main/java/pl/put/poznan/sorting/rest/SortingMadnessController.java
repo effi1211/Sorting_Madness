@@ -27,11 +27,11 @@ public class SortingMadnessController {
         //logger.debug(Arrays.toString(transforms));
         
         //TODO dodać sprawdzanie błędów (chyba tyle tych błędów, ale niech ktoś sprawdzi plis)
-        if (sortInfo.dataToSort.length == 0) {
+        if (data_in.dataToSort.length == 0) {
             logger.error("Error - numbers list is empty");
             return new ResponseEntity<>("Error! Bad input, numbers list can't be empty", HttpStatus.BAD_REQUEST);
         }
-         if (sortInfo.algorithms.length == 0){
+         if (data_in.algorithms.length == 0){
             logger.error("Error - sorting types array is empty");
             return new ResponseEntity<>("Error! Bad input, sorting types array can't be empty", HttpStatus.BAD_REQUEST);
         }
