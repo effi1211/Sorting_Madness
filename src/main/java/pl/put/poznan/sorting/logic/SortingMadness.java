@@ -1,6 +1,6 @@
 package pl.put.poznan.sorting.logic;
 
-import java.lang.invoke.SwitchPoint;
+import java.util.Objects;
 
 /**
  * This is just an example to show that the logic should be outside the REST service.
@@ -11,18 +11,43 @@ public class SortingMadness {
         public String algorithmName;
         public int[] sorted;
     }
-    public result sort(int[] text, int iterations, boolean desc){
-        SelectionSort select = new SelectionSort();
+    public result sort(int[] data, int iterations, boolean desc, String algorithm){
+
         result result = new result();
+        result.algorithmName = algorithm;
+        SortingTemplate sortAlgoritm = null;
+        if (Objects.equals(algorithm, "bubble")){
+            sortAlgoritm = new BubbleSort();
+        }
+        else if (Objects.equals(algorithm, "heap"))
+        {
+            sortAlgoritm = new HeapSort();
+        }
+        else if (Objects.equals(algorithm, "insert")) {
+            sortAlgoritm = new InsertionSort();
+        }
+        else if (Objects.equals(algorithm, "merge")) {
+            sortAlgoritm = new MergeSort();
+        }
+        else if (Objects.equals(algorithm, "quick")) {
+            sortAlgoritm = new QuickSort();
+        }
+        else if (Objects.equals(algorithm, "select")) {
+            sortAlgoritm = new SelectionSort();
+        }else
+        {
+            return null;
+        }
 
         TimeControl timer = new TimeControl();
-        result.algorithmName = "selection";
         timer.startTime();
-        result.sorted = select.sortData(text, iterations);
+        result.sorted = sortAlgoritm.sortData(data, iterations);
         timer.stopTime();
         result.time = timer.getTime();
-        result.sorted = reverse(result.sorted);
-
+        if (desc)
+        {
+            result.sorted = reverse(result.sorted);
+        }
         return result;
 
     }
@@ -39,21 +64,34 @@ public class SortingMadness {
             System.out.println("Empty Array");
             return;
         }
-
-        BubbleSort bubbles = new BubbleSort();
-        HeapSort heap = new HeapSort();
-        InsertionSort insert = new InsertionSort();
-        MergeSort merge = new MergeSort();
-        QuickSort quick = new QuickSort();
-        SelectionSort select = new SelectionSort();
-
+        String algorithm = "heap";
+        SortingTemplate sortAlgoritm = null;
+        if (Objects.equals(algorithm, "bubble")){
+            sortAlgoritm = new BubbleSort();
+        }
+        else if (Objects.equals(algorithm, "heap"))
+        {
+            sortAlgoritm = new HeapSort();
+        }
+        else if (Objects.equals(algorithm, "insert")) {
+            sortAlgoritm = new InsertionSort();
+        }
+        else if (Objects.equals(algorithm, "merge")) {
+            sortAlgoritm = new MergeSort();
+        }
+        else if (Objects.equals(algorithm, "quick")) {
+            sortAlgoritm = new QuickSort();
+        }
+        else if (Objects.equals(algorithm, "select")) {
+            sortAlgoritm = new SelectionSort();
+        }
         timer.startTime();
         timer.stopTime();
 
         System.out.println("Sorted array");
         System.out.println(timer.getTime());
-        printArray(select.sortData(arr, 0));
-        printArray(reverse(select.sortData(arr, 0)));
+        printArray(sortAlgoritm.sortData(arr, 0));
+        printArray(reverse(sortAlgoritm.sortData(arr, 0)));
     }
 
     static int[] reverse(int[] a)

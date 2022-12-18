@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import  org.springframework.http.ResponseEntity;
 import pl.put.poznan.sorting.logic.SortingMadness;
 
+import java.util.Arrays;
+
 @RestController
 @RequestMapping("/{text}")
 public class SortingMadnessController {
@@ -34,15 +36,17 @@ public class SortingMadnessController {
         }
          if (data_in.algorithms.length == 0){
             logger.error("Error - sorting types array is empty");
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error- sorting types array is empty");
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error - sorting types array is empty");
         }
-        //TODO zwracanie wyniku i czasów
-        SortingMadness.result sortedData = sorter.sort(data_in.dataToSort, data_in.iterations, data_in.desc);
-        //ResponseEntity<SortingMadness.result> test = new ResponseEntity<SortingMadness.result>(sortedData, HttpStatus.OK);
-        for (String alg : data_in.algorithms) {
-            //System.out.println(alg);
-            //TODO no że się wykona ten algorytm co tu jest
+        SortingMadness.result[] sortedData = new SortingMadness.result[data_in.algorithms.length];
+        for (int i = 0; i <data_in.algorithms.length ; i++) {
+            sortedData[i] = sorter.sort(Arrays.copyOf(data_in.dataToSort, data_in.dataToSort.length), data_in.iterations, data_in.desc, data_in.algorithms[i]);
+            if (sortedData[i] == null){
+                logger.error("Error - wrong algorithm name");
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error - wrong algorithm name");
+            }
         }
+
 
         return ResponseEntity.status(HttpStatus.OK).body(sortedData);
     }
