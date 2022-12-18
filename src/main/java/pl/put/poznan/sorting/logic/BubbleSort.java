@@ -1,8 +1,15 @@
 package pl.put.poznan.sorting.logic;
 
+/**
+ * Bubble Sort class
+ */
 class BubbleSort implements SortingTemplate{
 
-
+    /**
+     * Sorting function
+     * @param arr name of data input numbers array
+     * @param iter number of iteration
+     */
     void bubbleSort(int[] arr, int iter)
     {   int n = iter;
         if (iter <= 0 || iter > arr.length)
