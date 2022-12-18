@@ -7,16 +7,17 @@ import java.lang.invoke.SwitchPoint;
  */
 public class SortingMadness {
 
-    private final int[] toSort;
-
-    public SortingMadness(int[] toSort){
-        this.toSort = toSort;
-    }
-
-    public int[] sort(int[] text){
-        // of course, normally it would do something based on the transforms
+    public int[] sort(int[] text, int iterations, boolean desc){
         SelectionSort select = new SelectionSort();
-        return select.sortData(text, 0);
+        if (desc)
+        {
+            return reverse(select.sortData(text, iterations));
+
+        } else
+        {
+            return select.sortData(text, iterations);
+        }
+
     }
 
     static void printArray(int[] arr)
@@ -40,12 +41,12 @@ public class SortingMadness {
         SelectionSort select = new SelectionSort();
 
         timer.startTime();
-        int[] a = select.sortData(arr, 0);
         timer.stopTime();
 
         System.out.println("Sorted array");
         System.out.println(timer.getTime());
-        printArray(a);
+        printArray(select.sortData(arr, 0));
+        printArray(reverse(select.sortData(arr, 0)));
     }
 
     static int[] reverse(int[] a)
