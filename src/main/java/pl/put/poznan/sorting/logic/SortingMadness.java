@@ -7,9 +7,9 @@ import java.lang.invoke.SwitchPoint;
  */
 public class SortingMadness {
     public static class result {
-        long time;
-        String algorithmName;
-        int[] sorted;
+        public long time;
+        public String algorithmName;
+        public int[] sorted;
     }
     public result sort(int[] text, int iterations, boolean desc){
         SelectionSort select = new SelectionSort();
