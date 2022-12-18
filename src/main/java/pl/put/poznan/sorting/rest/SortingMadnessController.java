@@ -14,33 +14,16 @@ public class SortingMadnessController {
     private static final Logger logger = LoggerFactory.getLogger(SortingMadnessController.class);
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
+    public int[] get(@PathVariable String text,
+                     @RequestParam(value="zbior", defaultValue="{}") int[] zbior) {
 
         // log the parameters
         logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
+        logger.debug(Arrays.toString(zbior));
 
         // perform the transformation, you should run your logic here, below is just a silly example
-        SortingMadness transformer = new SortingMadness(transforms);
-        return transformer.transform(text);
+        SortingMadness transformer = new SortingMadness(zbior);
+        return transformer.sort(zbior);
     }
-
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody String[] transforms) {
-
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
-
-        // perform the transformation, you should run your logic here, below is just a silly example
-        SortingMadness transformer = new SortingMadness(transforms);
-        return transformer.transform(text);
-    }
-
-
 
 }
-
-

@@ -7,15 +7,16 @@ import java.lang.invoke.SwitchPoint;
  */
 public class SortingMadness {
 
-    private final String[] transforms;
+    private final int[] toSort;
 
-    public SortingMadness(String[] transforms){
-        this.transforms = transforms;
+    public SortingMadness(int[] toSort){
+        this.toSort = toSort;
     }
 
-    public String transform(String text){
+    public int[] sort(int[] text){
         // of course, normally it would do something based on the transforms
-        return text.toUpperCase();
+        SelectionSort select = new SelectionSort();
+        return select.sortData(text, 0);
     }
 
     static void printArray(int[] arr)
