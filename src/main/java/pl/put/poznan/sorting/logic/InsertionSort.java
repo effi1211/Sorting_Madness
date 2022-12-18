@@ -23,9 +23,38 @@ of their current position */
         }
     }
 
+    public String[] sortText(String[] arr,int iter) {
+
+        int f = iter;
+        if (iter <= 0 || iter > arr.length)
+        {
+            f = arr.length;
+        }
+
+        String temp = "";
+
+        for(int i = 0; i < f; i++) {
+            for (int j = i + 1; j < f; j++) {
+                if (arr[i].compareToIgnoreCase(arr[j]) > 0) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        return arr;
+    }
+
     public int[] sortData(int[] data_in, int iter)
     {
         sort(data_in, iter);
+        return data_in;
+    }
+
+    public String[] sortData(String[] data_in, int iter)
+    {
+        sortText(data_in, iter);
         return data_in;
     }
 }
