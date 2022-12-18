@@ -4,22 +4,22 @@ package pl.put.poznan.sorting.logic;
  */
 public class TimeControl {
     /**
-     * Start of the timecount
+     * Time when sorting started
      */
     private static long start;
     /**
-     * Stop of the timecount
+     * Time at the end of the sort
      */
     private static long finish;
 
     /**
-     * Starts counting time
+     * Starts counting time function
      */
     public void startTime(){
         start = System.nanoTime();
     }
     /**
-     * Stop counting time
+     * Stop counting time function
      */
     public void stopTime(){
         finish = System.nanoTime();
