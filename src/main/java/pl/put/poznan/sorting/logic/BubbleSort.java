@@ -20,9 +20,38 @@ class BubbleSort implements SortingTemplate{
                 }
     }
 
+    public String[] bubbleSortText(String[] arr,int iter) {
+        int n = arr.length;
+        if (iter <= 0 || iter > arr.length)
+        {
+            n = arr.length;
+        }
+
+        String temp;
+
+        for (int j = 0; j < n - 1; j++)
+        {
+            for (int i = j + 1; i < n; i++)
+            {
+                if (arr[j].compareTo(arr[i]) > 0)
+                {
+                    temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
     public int[] sortData(int[] data_in, int iter)
     {
         bubbleSort(data_in, iter);
+        return data_in;
+    }
+    public String[] sortData(String[] data_in, int iter)
+    {
+        bubbleSortText(data_in, iter);
         return data_in;
     }
 }

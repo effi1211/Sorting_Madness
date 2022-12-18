@@ -85,6 +85,8 @@ public class MergeSort implements SortingTemplate{
             merge(arr, l, m, r);
         }
     }
+
+
     /**
      * This function sorts arrays of numbers :)
      *
@@ -99,5 +101,7 @@ public class MergeSort implements SortingTemplate{
             sort(data_in,0,data_in.length-1);
             return data_in;
         }
+
+
     }
 
