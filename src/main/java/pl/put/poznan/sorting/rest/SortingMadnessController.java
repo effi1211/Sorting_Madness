@@ -1,7 +1,4 @@
 package pl.put.poznan.sorting.rest;
-import com.google.gson.Gson;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -30,11 +27,11 @@ public class SortingMadnessController {
         //logger.debug(Arrays.toString(transforms));
         
         //TODO dodać sprawdzanie błędów (chyba tyle tych błędów, ale niech ktoś sprawdzi plis)
-        if (dataToSort.length == 0) {
+        if (sortInfo.dataToSort.length == 0) {
             logger.error("Error - numbers list is empty");
             return new ResponseEntity<>("Error! Bad input, numbers list can't be empty", HttpStatus.BAD_REQUEST);
         }
-         if (algorithms.length == 0){
+         if (sortInfo.algorithms.length == 0){
             logger.error("Error - sorting types array is empty");
             return new ResponseEntity<>("Error! Bad input, sorting types array can't be empty", HttpStatus.BAD_REQUEST);
         }
