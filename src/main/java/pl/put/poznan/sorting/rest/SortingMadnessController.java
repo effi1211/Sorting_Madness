@@ -25,7 +25,16 @@ public class SortingMadnessController {
         // log the parameters
         //logger.debug(text);
         //logger.debug(Arrays.toString(transforms));
-        //TODO dodać sprawdzanie błędów
+        
+        //TODO dodać sprawdzanie błędów (chyba tyle tych błędów, ale niech ktoś sprawdzi plis)
+        if (dataToSort.length == 0) {
+            logger.error("Error - numbers list is empty");
+            return new ResponseEntity<>("Error! Bad input, numbers list can't be empty", HttpStatus.BAD_REQUEST);
+        }
+         if (algorithms.length == 0){
+            logger.error("Error - sorting types array is empty");
+            return new ResponseEntity<>("Error! Bad input, sorting types array can't be empty", HttpStatus.BAD_REQUEST);
+        }
         //TODO zwracanie wyniku i czasów
         SortingMadness.result sortedData = sorter.sort(data_in.dataToSort, data_in.iterations, data_in.desc);
         ResponseEntity<SortingMadness.result> test = new ResponseEntity<SortingMadness.result>(sortedData, HttpStatus.OK);
