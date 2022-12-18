@@ -10,7 +10,7 @@ import pl.put.poznan.sorting.logic.SortingMadness;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/{text}")
+@RequestMapping("/")
 public class SortingMadnessController {
 
     private static final Logger logger = LoggerFactory.getLogger(SortingMadnessController.class);
