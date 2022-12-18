@@ -6,7 +6,7 @@ package pl.put.poznan.sorting.logic;
 class BubbleSort implements SortingTemplate{
 
     /**
-     * Sorting function
+     * Sorting function for numbers
      * @param arr name of data input numbers array
      * @param iter number of iteration
      */
@@ -27,6 +27,12 @@ class BubbleSort implements SortingTemplate{
                 }
     }
 
+    /**
+     * Sorting function for String
+     * @param arr name of data input string array
+     * @param iter number of iteration
+     * @return
+     */
     public String[] bubbleSortText(String[] arr,int iter) {
         int n = arr.length;
         if (iter <= 0 || iter > arr.length)
