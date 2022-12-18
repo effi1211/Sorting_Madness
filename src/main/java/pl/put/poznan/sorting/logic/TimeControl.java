@@ -16,13 +16,13 @@ public class TimeControl {
      * Starts counting time
      */
     public void startTime(){
-        start = System.nanoTime();
+        start = System.currentTimeMillis();
     }
     /**
      * Stop counting time
      */
     public void stopTime(){
-        finish = System.nanoTime();
+        finish = System.currentTimeMillis();
     }
     /**
      * This function returns the time of the sorting algorithm
