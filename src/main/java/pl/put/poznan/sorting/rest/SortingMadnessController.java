@@ -21,7 +21,7 @@ public class SortingMadnessController {
 
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<SortingMadness.result> post(@RequestBody sortInfo data_in) {
+    public ResponseEntity  post(@RequestBody sortInfo data_in) {
         SortingMadness sorter = new SortingMadness();
         // log the parameters
         //logger.debug(text);
@@ -30,11 +30,11 @@ public class SortingMadnessController {
         //TODO dodać sprawdzanie błędów (chyba tyle tych błędów, ale niech ktoś sprawdzi plis)
         if (data_in.dataToSort.length == 0) {
             logger.error("Error - numbers list is empty");
-            //return new ResponseEntity<SortingMadness.result>("Error! Bad input, numbers list can't be empty", HttpStatus.BAD_REQUEST);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error - numbers list is empty");
         }
          if (data_in.algorithms.length == 0){
             logger.error("Error - sorting types array is empty");
-            //return new ResponseEntity<SortingMadness.result>("Error! Bad input, sorting types array can't be empty", HttpStatus.BAD_REQUEST);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error- sorting types array is empty");
         }
         //TODO zwracanie wyniku i czasów
         SortingMadness.result sortedData = sorter.sort(data_in.dataToSort, data_in.iterations, data_in.desc);
@@ -44,7 +44,7 @@ public class SortingMadnessController {
             //TODO no że się wykona ten algorytm co tu jest
         }
 
-        return new ResponseEntity<>(sortedData, HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(sortedData);
     }
 
 
