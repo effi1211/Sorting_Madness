@@ -23,7 +23,7 @@ of their current position */
         }
     }
 
-    public String[] sortText(String[] arr,int iter) {
+    public void sortText(String[] arr,int iter) {
 
         int f = iter;
         if (iter <= 0 || iter > arr.length)
@@ -43,7 +43,6 @@ of their current position */
             }
         }
 
-        return arr;
     }
 
     public int[] sortData(int[] data_in, int iter)

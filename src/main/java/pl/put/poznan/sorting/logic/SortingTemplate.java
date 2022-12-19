@@ -17,5 +17,5 @@ public interface SortingTemplate {
      * @param iter maximum number of iterations
      * @return sorted strings array
      */
-    //public String[] sortData(String[] data_in,int iter);
+    String[] sortData(String[] data_in,int iter);
 }

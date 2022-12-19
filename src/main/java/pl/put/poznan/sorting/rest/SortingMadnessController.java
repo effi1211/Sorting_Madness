@@ -39,6 +39,7 @@ public class SortingMadnessController {
         }
         SortingMadness.result[] sortedData = new SortingMadness.result[data_in.algorithms.length];
         for (int i = 0; i <data_in.algorithms.length ; i++) {
+            logger.debug(data_in.algorithms[i]);
             sortedData[i] = sorter.sort(Arrays.copyOf(data_in.dataToSort, data_in.dataToSort.length), data_in.iterations, data_in.desc, data_in.algorithms[i]);
             if (sortedData[i] == null){
                 logger.error("Error - wrong algorithm name");

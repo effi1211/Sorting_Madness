@@ -31,9 +31,8 @@ class BubbleSort implements SortingTemplate{
      * Sorting function for String
      * @param arr name of data input string array
      * @param iter number of iteration
-     * @return
      */
-    public String[] bubbleSortText(String[] arr,int iter) {
+    public void bubbleSortText(String[] arr,int iter) {
         int n = iter;
         if (iter <= 0 || iter > arr.length)
         {
@@ -54,7 +53,6 @@ class BubbleSort implements SortingTemplate{
                 }
             }
         }
-        return arr;
     }
 
     public int[] sortData(int[] data_in, int iter)

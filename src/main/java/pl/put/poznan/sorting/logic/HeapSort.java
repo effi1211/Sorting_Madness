@@ -1,7 +1,5 @@
 package pl.put.poznan.sorting.logic;
 
-import java.util.Arrays;
-
 /**
  * Heap sort
  */
