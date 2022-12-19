@@ -9,7 +9,7 @@ public interface SortingTemplate {
      * @param iter maximum number of iterations
      * @return sorted number of array
      */
-    public int[] sortData(int[] data_in, int iter);
+    int[] sortData(int[] data_in, int iter);
 
     /** String Sorting
      *

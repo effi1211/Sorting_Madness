@@ -31,7 +31,7 @@ of their current position */
             f = arr.length;
         }
 
-        String temp = "";
+        String temp;
 
         for(int i = 0; i < f; i++) {
             for (int j = i + 1; j < f; j++) {

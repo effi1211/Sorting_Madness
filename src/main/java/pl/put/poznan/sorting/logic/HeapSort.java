@@ -194,7 +194,7 @@ public class HeapSort implements SortingTemplate
     }
 
     // Utility function
-    static void sort(String k[], int n)
+    static void sort(String[] k, int n)
     {
 
         // To heapiFy
@@ -207,7 +207,7 @@ public class HeapSort implements SortingTemplate
         heapSort();
     }
     // Utility function
-    static void sortText(String k[], int n)
+    static void sortText(String[] k, int n)
     {
 
         // To heapiFy
