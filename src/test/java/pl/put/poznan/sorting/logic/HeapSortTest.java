@@ -39,8 +39,6 @@ class HeapSortTest {
     @Test
     void TestHeapSortText1(){
         String[] wynik = sort.sortData(znaki,0);
-        System.out.print(Arrays.toString(wynik));
-        System.out.print(Arrays.toString(spodziewanywynik_znaki));
         assertArrayEquals(spodziewanywynik_znaki, wynik);
     }
 
