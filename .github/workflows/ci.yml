@@ -16,3 +16,15 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+      - name: Upload jar
+        uses: actions/upload-artifact@v2
+        with:
+          name: App
+          path: target/*.jar
+          if-no-files-found: error
+      - name: Upload javadoc
+        uses: actions/upload-artifact@v2
+        with:
+          name: Documentation
+          path: target/site/
+          if-no-files-found: error
