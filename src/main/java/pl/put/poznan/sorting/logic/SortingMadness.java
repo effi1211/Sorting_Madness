@@ -15,7 +15,13 @@ public class SortingMadness {
 
         result result = new result();
         result.algorithmName = algorithm;
-        SortingTemplate sortAlgoritm = null;
+        SortingTemplate sortAlgoritm;
+        if (Objects.equals(algorithm, "auto")){
+            DetectType detector = new DetectType(data);
+            algorithm = detector.detectSortType();
+            result.algorithmName = "auto - ".concat(algorithm);
+        }
+
         if (Objects.equals(algorithm, "bubble")){
             sortAlgoritm = new BubbleSort();
         }
