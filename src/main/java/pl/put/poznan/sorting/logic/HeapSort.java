@@ -1,7 +1,7 @@
 package pl.put.poznan.sorting.logic;
 
 /**
- * Heap sort
+ * Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.
  */
 // Java program for implementation of Heap Sort
 public class HeapSort implements SortingTemplate
@@ -143,6 +143,12 @@ public class HeapSort implements SortingTemplate
         sort(data_in, iter);
         return data_in;
     }
+    /**
+     * This function sorts arrays of strings.
+     *
+     * @param data_in array of strings.
+     * @return sorted array of strings.
+     */
     public String[] sortData(String[] data_in, int iter)
     {
         sortText(data_in, iter);
