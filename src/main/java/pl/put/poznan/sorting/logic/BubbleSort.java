@@ -7,6 +7,7 @@ class BubbleSort implements SortingTemplate{
 
     /**
      * Sorting function for numbers
+     * Bubble sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. The method works by examining each set of adjacent elements in the string, from left to right, switching their positions if they are out of order. The algorithm then repeats this process until it can run through the entire string and find no two elements that need to be swapped.
      * @param arr name of data input numbers array
      * @param iter number of iteration
      */
@@ -29,6 +30,7 @@ class BubbleSort implements SortingTemplate{
 
     /**
      * Sorting function for String
+     * Bubble sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. The method works by examining each set of adjacent elements in the string, from left to right, switching their positions if they are out of order. The algorithm then repeats this process until it can run through the entire string and find no two elements that need to be swapped.
      * @param arr name of data input string array
      * @param iter number of iteration
      */
@@ -54,12 +56,23 @@ class BubbleSort implements SortingTemplate{
             }
         }
     }
-
+    /**
+     * This function sorts arrays of numbers.
+     *
+     * @param data_in array of numbers.
+     * @return sorted array of numbers.
+     */
     public int[] sortData(int[] data_in, int iter)
     {
         bubbleSort(data_in, iter);
         return data_in;
     }
+    /**
+     * This function sorts arrays of strings.
+     *
+     * @param data_in array of strings.
+     * @return sorted array of strings.
+     */
     public String[] sortData(String[] data_in, int iter)
     {
         bubbleSortText(data_in, iter);
