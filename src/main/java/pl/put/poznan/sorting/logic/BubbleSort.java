@@ -34,7 +34,7 @@ class BubbleSort implements SortingTemplate{
      * @return
      */
     public String[] bubbleSortText(String[] arr,int iter) {
-        int n = arr.length;
+        int n = iter;
         if (iter <= 0 || iter > arr.length)
         {
             n = arr.length;
