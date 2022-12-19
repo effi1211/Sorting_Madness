@@ -1,14 +1,13 @@
 package pl.put.poznan.sorting.logic;
 
 public class DetectType {
-    private final int[] data;
     private final int array_length;
     private final float sortedPercentage;
 
     public DetectType(int[] in)
-    {   data = in;
+    {
         array_length = in.length;
-        sortedPercentage = sortPercent();
+        sortedPercentage = sortPercent(in);
     }
 
     public DetectType(String[] in)
@@ -28,7 +27,7 @@ public class DetectType {
         return "heap";
     }
 
-    private float sortPercent() {
+    private float sortPercent(int[] data) {
         int sortedElements = 0;
         for(int i = 1; i < array_length; i++) {
             if(data[i] < data[i-1]) {
