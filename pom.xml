@@ -11,7 +11,7 @@
         <version>2.3.3.RELEASE</version>
     </parent>
 
-    <groupId>pl.put.poznan</groupId>
+    <groupId>I7-Alpha</groupId>
     <artifactId>Sorting_Madness</artifactId>
     <version>0.1</version>
     
