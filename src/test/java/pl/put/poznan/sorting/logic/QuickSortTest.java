@@ -22,8 +22,8 @@ class QuickSortTest {
         spodziewanywynik_liczby = new int[] {1,2,3,4,5,6};
     }
     public void setUp(){
-        slowa = new int[]{'dada','dcaa','abc','ccc','bbb','aaa'};
-        spodziewanywynik_slowa = new int[] {'aaa','abc','bbb','ccc','dada','dcaa'};
+        slowa = new String[]{'dada','dcaa','abc','ccc','bbb','aaa'};
+        spodziewanywynik_slowa = new String[] {'aaa','abc','bbb','ccc','dada','dcaa'};
     }
 
     @Test
