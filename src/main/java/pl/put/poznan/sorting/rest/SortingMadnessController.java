@@ -31,11 +31,9 @@ public class SortingMadnessController {
     @RequestMapping(value = "/sortdata", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity  postData(@RequestBody sortInfo data_in) {
         SortingMadness sorter = new SortingMadness();
-        // log the parameters
-        //logger.debug(text);
-        //logger.debug(Arrays.toString(transforms));
-        
-        //TODO dodać sprawdzanie błędów (chyba tyle tych błędów, ale niech ktoś sprawdzi plis)
+
+        logger.debug(Arrays.toString(data_in.dataToSort));
+
         if (data_in.dataToSort.length == 0) {
             logger.error("Error - numbers list is empty");
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error - numbers list is empty");
