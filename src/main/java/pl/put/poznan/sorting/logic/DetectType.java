@@ -11,6 +11,12 @@ public class DetectType {
         sortedPercentage = sortPercent();
     }
 
+    public DetectType(String[] in)
+    {
+        array_length = in.length;
+        sortedPercentage = sortPercent(in);
+    }
+
     public String detectSortType() {
 
         if(sortedPercentage > 0.8 && array_length < 100) return "bubble";
@@ -26,6 +32,18 @@ public class DetectType {
         int sortedElements = 0;
         for(int i = 1; i < array_length; i++) {
             if(data[i] < data[i-1]) {
+                sortedElements++;
+                if(i == array_length /2 + 1)
+                    if((float) sortedElements/i < 0.5) return (float) sortedElements/i;
+            }
+        }
+        return (float) sortedElements/array_length;
+    }
+
+    private float sortPercent(String[] data) {
+        int sortedElements = 0;
+        for(int i = 1; i < array_length; i++) {
+            if(data[i].compareTo(data[i-1]) > 0) {
                 sortedElements++;
                 if(i == array_length /2 + 1)
                     if((float) sortedElements/i < 0.5) return (float) sortedElements/i;
